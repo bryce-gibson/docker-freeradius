@@ -1,0 +1,17 @@
+FreeRADIUS
+==========
+
+Basic Docker container for FreeRADIUS.
+
+Configured to run FreeRADIUS and expose the Radius port.
+
+Users are defined in the users file. By default there is `admin:password`.
+
+The start.sh script will also take user details from env and add them as users.
+Eg running this container with `-e RADIUS_USER_test=password` will add a user
+with the username "test" and the password "password".
+
+The FreeRADIUS config will allow anyone to access it with the secret
+`testing123`.
+
+_None of this is even fractionally secure, it's just meant for dev purposes._
