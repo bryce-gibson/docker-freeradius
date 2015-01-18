@@ -14,4 +14,10 @@ with the username "test" and the password "password".
 The FreeRADIUS config will allow anyone to access it with the secret
 `testing123`.
 
+
+The /etc/freeradius directory is exposed as a volume, and FreeRADIUS will
+reload if it receives a SIGHUP. In combination this means you can modify files
+in the volume, and then `pkill -HUP freeradius` (approximate, tweak as needed)
+to make more enthusiastic modifications to the FreeRADIUS configuration.
+
 _None of this is even fractionally secure, it's just meant for dev purposes._
